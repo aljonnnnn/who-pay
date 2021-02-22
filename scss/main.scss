@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+$font-color: rgb(255, 255, 255);
+$back-color: rgb(17, 17, 17);
+$back-color-input: rgba(255, 255, 255, 0.5);
+$back-color-input-hover: rgba(255, 255, 255, 0.2);
+
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*, *::after, *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+body{
+    background: $back-color;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    font-family: 'Roboto', sans-serif;
+}
+
+section {
+    padding: 14.625rem 0 4.8125rem;
+
+    @media (min-width: 35.625rem) {
+        padding: 9.375rem 4.375rem;
+    }
+    .container {
+        padding: 0 1.875rem;
+
+
+        @media (min-width: 570px) {
+            max-width: 31.25rem;
+            margin: 0 auto;
+        }
+    }
+
+    .unlucky {
+        color: $font-color;
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 18.375rem;
+        text-transform: uppercase;
+    }
+
+    .input-name {
+        color: $font-color;
+        font-size: 1rem;
+        width: 100%;
+        padding: 0.75rem 0.9375rem;
+        background-color: $back-color-input;
+        outline: 1px solid $font-color;
+        border: none;
+        margin-bottom: 0.3125rem;
+
+        &:focus {
+            background-color: $back-color-input-hover;
+        }
+
+        &::placeholder {
+            color: $font-color;
+        }
+    }
+
+    .btn {
+        color: $font-color;
+        font-size: 1rem;
+        background: $back-color;
+        padding: 0.75rem 0.9375rem;
+        display: block;
+        width: 100%;
+        outline: 1px solid $font-color;
+        text-transform: uppercase;
+    }
+
+    .add-btn {
+        margin-bottom: 3.4375rem;
+    }
+}
