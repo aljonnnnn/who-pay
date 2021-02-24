@@ -8,7 +8,7 @@ addNameBtn.addEventListener('click', function() {
     if (name !== '') {
         listName.push(name);
     } else {
-        alert('type name in the input')
+        alert('enter name in input')
     }
 
     document.querySelector('.input-name').value = '';
