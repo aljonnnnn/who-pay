@@ -175,6 +175,11 @@ section .add-btn {
   font-weight: 400;
   text-transform: capitalize;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.name:hover {
+  color: red;
 }
 
 .name:not(:last-child) {
