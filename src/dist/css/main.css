@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  background: #111111;
+  background: black;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -21,7 +21,9 @@ body {
 }
 
 section {
-  padding: 11.625rem 0 4.8125rem;
+  position: relative;
+  min-height: 100vh;
+  padding: 100px 0 50px;
 }
 
 @media (min-width: 35.625rem) {
@@ -83,7 +85,7 @@ section .input-name::placeholder {
 section .btn {
   color: white;
   font-size: 1rem;
-  background: #111111;
+  background: black;
   padding: 0.75rem 0.9375rem;
   display: block;
   width: 100%;
@@ -93,4 +95,88 @@ section .btn {
 
 section .add-btn {
   margin-bottom: 3.4375rem;
+}
+
+/* NameList toggle class */
+
+.line {
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.line.active {
+  background-color: black;
+}
+
+.line:nth-child(1) {
+  transform: rotate(-63deg) translateX(-12px);
+}
+
+.line:nth-child(2) {
+  transform: rotate(63deg) translateX(-12px);
+}
+
+.line.active:nth-child(1) {
+  transform: rotate(-116deg) translateX(-12px);
+}
+
+.line.active:nth-child(2) {
+  transform: rotate(116deg) translateX(-12px);
+}
+
+
+
+
+/* NameList class */
+
+.toggle-names {
+  position: absolute;
+  top: -300%;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: white;
+  text-align: center;
+  padding-top: 80px;
+  transition: all 0.3s ease;
+}
+
+.toggle-names.show {
+  top: 0;
+}
+
+.showBtn {
+  position: fixed;
+  top: 20px ;
+  left: 50%;
+  transform: translateX(-50%) rotate(-90deg);
+  z-index: 10000;
+  height: 50px;
+  width: 30px;
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.heading {
+  color: black;
+  font-size: 32px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 33px;
+}
+
+.name {
+  font-size: 24px;
+  font-weight: 400;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.name:not(:last-child) {
+  margin-bottom: 20px;
 }
