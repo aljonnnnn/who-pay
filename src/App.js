@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import './dist/css/main.css'
 import NameList from './NameList'
 
@@ -8,7 +8,6 @@ function App() {
   const [addName, setAddName] = useState('')
   const [winner, setWinner] = useState('')
   const [showNameContainer, setShowNameContainer] = useState(false)
-  const inputEl = useRef()
  
   const handleClick = () => {
 
@@ -16,7 +15,6 @@ function App() {
       setNameList([...nameList, addName])
 
       setAddName('')
-      inputEl.current.value = '';
     } else {
       // alert('add name')
     }
@@ -36,7 +34,7 @@ function App() {
   }
 
   
-  // Delete item.  simple delete item i saw this on stackoverflow
+  // Delete item.  simple delete item i saw this on stackoverflow :)
   const handleDelete = (e) => {    
     setNameList(nameList.filter(name => name !== e.target.textContent ))
   } 
@@ -49,7 +47,7 @@ function App() {
               <h1 className="unlucky">THANK YOU {winner}</h1>
               <div className="form">
                   <input 
-                    ref={inputEl} 
+                    value={addName}
                     className="input-name" 
                     type="text" placeholder="Add Name" 
                     onChange={(e) => setAddName(e.target.value)}

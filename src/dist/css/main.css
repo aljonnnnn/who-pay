@@ -22,13 +22,13 @@ body {
 
 section {
   position: relative;
-  min-height: 100vh;
-  padding: 100px 0 50px;
+  max-height: 100vh;
+  padding: 70px 50px 0px ;
 }
 
 @media (min-width: 35.625rem) {
   section {
-    padding: 6.25rem 4.375rem;
+    /* padding: 6.25rem 4.375rem; */
   }
 }
 
@@ -133,7 +133,7 @@ section .add-btn {
 /* NameList class */
 
 .toggle-names {
-  position: absolute;
+  position: fixed;
   top: -300%;
   left: 0;
   width: 100%;
@@ -146,6 +146,8 @@ section .add-btn {
 
 .toggle-names.show {
   top: 0;
+  bottom: 0;
+  overflow-x: scroll;
 }
 
 .showBtn {
@@ -160,6 +162,7 @@ section .add-btn {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .heading {
