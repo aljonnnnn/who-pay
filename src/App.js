@@ -13,19 +13,30 @@ function App() {
 
     if (addName !== '') {
       setNameList([...nameList, addName])
-
       setAddName('')
     } else {
-      // alert('add name')
+      alert('add name')
     }
-
   }
+
+  useEffect(() => {
+    const nameListStorage = JSON.parse(localStorage.getItem('nameListStorage'))
+    if (nameListStorage) {
+      setNameList(nameListStorage)
+    }
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem('nameListStorage', JSON.stringify(nameList))
+  },[nameList])
+
 
   const handleWin = () => {
     const winner = Math.floor(Math.random() * nameList.length)
     console.log(winner)
     setWinner(nameList[winner])
   }
+  
 
   const keypress = (e) => {
     if (e.key === 'Enter') {
@@ -34,7 +45,6 @@ function App() {
   }
 
   
-  // Delete item.  simple delete item i saw this on stackoverflow :)
   const handleDelete = (e) => {    
     setNameList(nameList.filter(name => name !== e.target.textContent ))
   } 
